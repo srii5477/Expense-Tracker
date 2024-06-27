@@ -14,7 +14,7 @@ function App() {
     <div className="container">
           <Header />
           <TransactProvider>
-          <Balance amt="0" />
+          <Balance />
           <IncomeSpending income="0" expenditure="0" />
           <History />
           <AddTransaction />

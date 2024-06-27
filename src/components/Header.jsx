@@ -4,7 +4,7 @@ import React from 'react';
 const Header = () => {
     return (
         <div>
-        <h2> Track your Expenses! </h2>
+        <h1 className="spl"> Track your Expenses! </h1>
         </div>
     )
 }

@@ -1,21 +1,35 @@
-import React, { useState, useContext, createContext } from 'react';
-
+import React, { useState, useContext, createContext, useReducer } from 'react';
+import Reducer from './Reducer';
 
 const TransactContext = createContext();
 // dummy transactions to initialize
 const initialState = {
     transactions: [
-        { id: 1, text: 'Flowers', amt: -20 },
-        { id: 2, text: 'Apples', amt: -50 },
-        { id: 3, text: 'Notebooks', amt: -80 },
-        { id: 4, text: 'Salary', amt: 120 }
+        
     ]
 };
 
 const TransactProvider = ({ children }) => {
-  const [ list, setList ] = useState(initialState);
+  //const [ list, setList ] = useState(initialState);
+  const [ state, dispatch ] = useReducer(Reducer, initialState);
+  function addExpense (expense) {
+    dispatch({
+      type: 'ADD',
+      payload: expense
+    })
+  }
+  function delExpense (id) {
+    dispatch({
+      type: 'DEL',
+      payload: id
+    })
+  }
   return (
-    <TransactContext.Provider value={list}>
+    <TransactContext.Provider value={{
+      transactions: state.transactions,
+      addExpense,
+      delExpense
+    }}>
         {children}
     </TransactContext.Provider>
   )
