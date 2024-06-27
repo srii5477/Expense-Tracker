@@ -6,17 +6,17 @@ const AddTransaction = () => {
     return (
         <>
             <h3>Add a Transaction(s)</h3>
-            <htmlForm>
+            <form>
                 <div className="htmlForm-control">
-                    <label htmlFor="text">Text</label>
+                    <label htmlFor="text"><h4>Text </h4></label>
                         <input type="text" value={text} onChange={(e) => setText(e.target.value)} name="text" placeholder="Enter text..." />
                 </div>
                 <div className="htmlForm-control">
-                    <label htmlFor="amount">Amount(negative - expense, positive - income)</label>
+                    <label htmlFor="amount"><h5>Amount </h5></label>
                     <input type="number" name="amount" value={amt} onChange={(e) => setAmt(e.target.value)} placeholder="Enter amount..." />
                 </div>
-                <button className="btn btn-outline-info btn-lg">Add transaction</button>
-            </htmlForm>
+                <button className="btn btn-outline-light btn-lg">Add transaction</button>
+            </form>
         </>
     )
 }

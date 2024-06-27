@@ -3,11 +3,11 @@ import React from 'react';
 const IncomeSpending = (props) => {
     return (
         <div>
-            <h3>
+            <h4>
                 Income: {props.income}
                 <br/>
                 Expenditure: -{props.expenditure}
-            </h3>
+            </h4>
         </div>
     )
 }

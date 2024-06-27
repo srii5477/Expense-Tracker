@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-image: url('./aesthetic-minimal-cute-pastel-pink-wallpaper-illustration-perfect-for-wallpaper-backdrop-postcard-background-banner-vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: 5%;
+}
+
+.container {
+    display: box;
+    opacity: 0.8;
+}
+
+h2, h3, h4, h5, p, div {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(179, 0, 81);
+    margin-bottom: 5%;
+}
+
+h2 {
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+h2, h3 {
+    font-weight: 600;
+}
+
+table {
+    margin-left: 40%;
+}
+
+
