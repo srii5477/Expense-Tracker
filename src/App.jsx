@@ -5,9 +5,11 @@ import IncomeSpending from './components/IncomeSpending';
 import History from './components/History';
 import AddTransaction from './components/AddTransaction';
 import TransactProvider from './context/TransactProvider';
+import ChatBot from 'react-chatbotify';
+import ChatWithAI from './components/ChatWithAI';
+
 
 function App() {
-
   return (
     <>
     
@@ -15,11 +17,14 @@ function App() {
           <Header />
           <TransactProvider>
           <Balance />
-          <IncomeSpending income="0" expenditure="0" />
+          <IncomeSpending />
           <History />
           <AddTransaction />
+          <ChatWithAI/>
           </TransactProvider>
+          
     </div>
+    
     </>
     
   )
