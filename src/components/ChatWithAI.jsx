@@ -14,7 +14,7 @@ const ChatWithAI = () => {
     // }, []);
     const Submit = (e) => {
         e.preventDefault();
-        axios.post("https://localhost:3000/invoke", { transactions }).then((response) => {
+        axios.post("http://localhost:3000/invoke", { transactions }).then((response) => {
             setData(response.data);
          }).catch((err) => {
              console.error(err);
@@ -22,9 +22,9 @@ const ChatWithAI = () => {
     }
 
     return (
-        <div>
+        <div className="chat">
             <form onSubmit={Submit}>
-                <h3> Do you wish to learn more insights with the help of a personalized report of your daily expense with AI? </h3>
+                <h3> Do you wish to get more insights from your daily expenses with the help of a personalized report from the latest AI models? </h3>
                 <h5> {data} </h5>
                 <button type="submit" className="btn btn-outline-light">Let me see it!</button>
             </form>

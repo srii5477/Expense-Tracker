@@ -9,7 +9,23 @@ body {
 }
 
 .spl, h3 { 
-    font-family: "Playwrite NG Modern", cursive !important;
+    font-family: 'Playwrite NG Modern', cursive !important;
+}
+.chat {
+    display: box;
+    margin-top: 10%;
+    height: 400px;
+    background: linear-gradient(to right, rgb(224, 101, 228), rgb(234, 76, 102));
+    padding: 4%;
+}
+.chat h3, h5 {
+    margin: 5% !important;
+    color: white !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.chat button {
+    margin-left: -0.5%;
 }
 
 input {

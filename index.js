@@ -16,7 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const llamaAPI = new LlamaAI(process.env.API_KEY);
 
-app.post("/invoke", async (req, res) => {
+app.options("/invoke", cors());
+
+app.post("/invoke", cors(), async (req, res) => {
     const info = req.body.transactions;
 	const apiRequestJson = {
 		messages: [{ role: "user", content: info }],
