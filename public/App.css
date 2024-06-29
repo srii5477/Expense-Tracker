@@ -14,11 +14,12 @@ body {
 .chat {
     display: box;
     margin-top: 10%;
-    height: 400px;
-    background: linear-gradient(to right, rgb(224, 101, 228), rgb(234, 76, 102));
+    height: 700px;
+    /* background: linear-gradient(to right, rgb(244, 191, 215), rgb(234, 76, 102)); */
+    border: 2px solid pink;
     padding: 4%;
 }
-.chat h3, h5 {
+.chat h3, .chat h5 {
     margin: 5% !important;
     color: white !important;
     font-family: 'Montserrat', sans-serif !important;
@@ -26,6 +27,7 @@ body {
 
 .chat button {
     margin-left: -0.5%;
+    margin-bottom: 5%;
 }
 
 input {
@@ -50,6 +52,10 @@ h2 {
 
 h2, h3 {
     font-weight: 600;
+}
+
+.space {
+    margin-top: 10%;
 }
 
 button {

@@ -11,7 +11,7 @@ const AddTransaction = () => {
     }
     return (
         <>
-            <h3>Add Transaction(s)</h3>
+            <h3 className="space">Add Transaction(s)</h3>
             <form onSubmit={Submit}>
                 <div className="htmlForm-control">
                     <label htmlFor="text"><h5>Description</h5></label>

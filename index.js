@@ -34,7 +34,7 @@ app.post("/invoke", cors(), async (req, res) => {
 						changes: {
 							type: "string",
 							description:
-								"Tips and advice on how to structure their daily expense better based on the given user's data.",
+								"Tips and advice on how to structure their daily expense better based on the given user's data. An example of an ideal response: { changes: 'You should avoid overspending if you wish to meet your budgeting goals. You can seek professional help if needed, if you find yourself struggling too much with financial anxiety or resorting to retail therapy often.'}. This field should be a simple string.",
 						},
 						sources: {
 							type: "string",
@@ -54,8 +54,7 @@ app.post("/invoke", cors(), async (req, res) => {
 		console.log(response.choices[0].message.function_call.arguments);
 		res.json({ data: response.choices[0].message.function_call.arguments });
 	} catch (error) {
-		console.error(error);
-		//res.render("index.ejs", { msg: "exception caught!" });
+		res.json({ data: "SSome error occured with our backend. Please try again."} );
 	}
 })
 
