@@ -20,8 +20,9 @@ app.options("/invoke", cors());
 
 app.post("/invoke", cors(), async (req, res) => {
     const info = req.body.transactions;
-	const apiRequestJson = {
-		messages: [{ role: "user", content: info }],
+	console.log(info);
+	const request = {
+		messages: [{ role: "user", content: JSON.stringify(info) }],
 		functions: [
 			{
 				name: "suggest_improvement",
@@ -38,18 +39,18 @@ app.post("/invoke", cors(), async (req, res) => {
 						sources: {
 							type: "string",
 							description:
-								"Cite some useful sources on the net to read from and educate oneself, e.g. if a user spends too much, direct them to content to manage overspending, etc.",
+								"Cite some useful sources on the net to read from and educate oneself, e.g. if a user spends too much, direct them to content to manage overspending, etc. Don't mention the url to the links directly, mention the article name, website name or book name. Don't use quotes anywhere within your response.",
 						},
 					},
 				},
-				required: ["changes", "sources"],
+				required: ["sources", "changes"],
 			},
 		],
 		stream: false,
 		function_call: "suggest_improvement",
 	};
 	try {
-		const response = await llamaAPI.run(apiRequestJson);
+		const response = await llamaAPI.run(request);
 		console.log(response.choices[0].message.function_call.arguments);
 		res.json({ data: response.choices[0].message.function_call.arguments });
 	} catch (error) {
